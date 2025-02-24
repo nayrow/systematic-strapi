@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "HomeHero": {
+      "displayName": "HomeHero",
+      "type": "component",
+      "repeatable": false,
+      "component": "home.home-hero",
+      "required": true
+    },
+    "News": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.news"
+    }
+  }
+}

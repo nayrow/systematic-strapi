@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_home_featured_articles",
+  "info": {
+    "displayName": "FeaturedArticle"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

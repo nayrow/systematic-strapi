@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_home_home_heroes",
+  "info": {
+    "displayName": "HomeHero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "FeaturedArticle": {
+      "displayName": "FeaturedArticle",
+      "type": "component",
+      "repeatable": false,
+      "component": "home.featured-article",
+      "required": true
+    },
+    "Video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "primaryButton": {
+      "displayName": "Button",
+      "type": "component",
+      "repeatable": false,
+      "component": "home.button",
+      "required": true
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.button",
+      "required": true
+    }
+  }
+}

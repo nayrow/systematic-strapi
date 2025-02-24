@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_home_news",
+  "info": {
+    "displayName": "News",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "NewsPost": {
+      "displayName": "NewsPost",
+      "type": "component",
+      "repeatable": true,
+      "component": "home.news-post"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
