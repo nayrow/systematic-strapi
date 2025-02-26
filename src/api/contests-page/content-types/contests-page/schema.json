@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "contests_pages",
+  "info": {
+    "singularName": "contests-page",
+    "pluralName": "contests-pages",
+    "displayName": "Contests Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.page-hero"
+    },
+    "contests": {
+      "displayName": "contest",
+      "type": "component",
+      "repeatable": true,
+      "component": "contests.contest"
+    }
+  }
+}

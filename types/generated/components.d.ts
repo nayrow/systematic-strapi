@@ -1,5 +1,31 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContactSocialLink extends Struct.ComponentSchema {
+  collectionName: 'components_contact_social_links';
+  info: {
+    displayName: 'Social Link';
+  };
+  attributes: {
+    iconUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ContestsContest extends Struct.ComponentSchema {
+  collectionName: 'components_contests_contests';
+  info: {
+    displayName: 'contest';
+  };
+  attributes: {
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
+    date: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface HeaderHeaderLinks extends Struct.ComponentSchema {
   collectionName: 'components_header_header_links';
   info: {
@@ -195,6 +221,8 @@ export interface TeamTeamMember extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'contact.social-link': ContactSocialLink;
+      'contests.contest': ContestsContest;
       'header.header-links': HeaderHeaderLinks;
       'home.button': HomeButton;
       'home.featured-article': HomeFeaturedArticle;
