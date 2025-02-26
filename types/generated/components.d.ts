@@ -97,6 +97,18 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPageHero extends Struct.ComponentSchema {
+  collectionName: 'components_shared_page_heroes';
+  info: {
+    displayName: 'PageHero';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+    subtitle: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -148,6 +160,38 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface TeamDepartament extends Struct.ComponentSchema {
+  collectionName: 'components_team_departaments';
+  info: {
+    description: '';
+    displayName: 'Department';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    leader: Schema.Attribute.Component<'team.team-member', false>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    separator: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    team_members: Schema.Attribute.Component<'team.team-member', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface TeamTeamMember extends Struct.ComponentSchema {
+  collectionName: 'components_team_team_members';
+  info: {
+    displayName: 'TeamMember';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    role: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -158,10 +202,13 @@ declare module '@strapi/strapi' {
       'home.news': HomeNews;
       'home.news-post': HomeNewsPost;
       'shared.media': SharedMedia;
+      'shared.page-hero': SharedPageHero;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'team.departament': TeamDepartament;
+      'team.team-member': TeamTeamMember;
     }
   }
 }

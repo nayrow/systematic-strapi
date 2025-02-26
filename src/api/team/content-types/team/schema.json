@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "teams",
+  "info": {
+    "singularName": "team",
+    "pluralName": "teams",
+    "displayName": "Team",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero": {
+      "displayName": "PageHero",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.page-hero",
+      "required": true
+    },
+    "leaders": {
+      "displayName": "TeamMember",
+      "type": "component",
+      "repeatable": true,
+      "component": "team.team-member",
+      "required": true
+    },
+    "separator": {
+      "type": "string",
+      "required": true
+    },
+    "department": {
+      "displayName": "Departament",
+      "type": "component",
+      "repeatable": true,
+      "component": "team.departament",
+      "required": true
+    }
+  }
+}

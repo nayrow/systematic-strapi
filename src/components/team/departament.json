@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_team_departaments",
+  "info": {
+    "displayName": "Department",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "leader": {
+      "type": "component",
+      "repeatable": false,
+      "component": "team.team-member"
+    },
+    "separator": {
+      "type": "string",
+      "required": true
+    },
+    "team_members": {
+      "type": "component",
+      "repeatable": true,
+      "component": "team.team-member",
+      "required": true
+    }
+  }
+}
