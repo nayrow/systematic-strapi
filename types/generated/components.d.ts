@@ -45,9 +45,13 @@ export interface HeaderHeaderLinks extends Struct.ComponentSchema {
 export interface HomeButton extends Struct.ComponentSchema {
   collectionName: 'components_home_buttons';
   info: {
+    description: '';
     displayName: 'Button';
   };
-  attributes: {};
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+  };
 }
 
 export interface HomeFeaturedArticle extends Struct.ComponentSchema {
