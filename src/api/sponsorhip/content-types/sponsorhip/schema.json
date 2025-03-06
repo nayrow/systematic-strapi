@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "sponsorhips",
+  "info": {
+    "singularName": "sponsorhip",
+    "pluralName": "sponsorhips",
+    "displayName": "Sponsorhip",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "tiers": {
+      "displayName": "Tier",
+      "type": "component",
+      "repeatable": true,
+      "component": "sponsorship.tier",
+      "required": true,
+      "min": 3,
+      "max": 3
+    },
+    "sections": {
+      "displayName": "Section",
+      "type": "component",
+      "repeatable": true,
+      "component": "sponsorship.section",
+      "required": true,
+      "min": 3,
+      "max": 3
+    }
+  }
+}

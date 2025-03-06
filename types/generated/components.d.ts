@@ -190,6 +190,53 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SponsorshipFeature extends Struct.ComponentSchema {
+  collectionName: 'components_sponsorship_features';
+  info: {
+    displayName: 'Feature';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    tiers: Schema.Attribute.JSON;
+  };
+}
+
+export interface SponsorshipHighlight extends Struct.ComponentSchema {
+  collectionName: 'components_sponsorship_highlights';
+  info: {
+    displayName: 'Highlight';
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SponsorshipSection extends Struct.ComponentSchema {
+  collectionName: 'components_sponsorship_sections';
+  info: {
+    displayName: 'Section';
+  };
+  attributes: {
+    features: Schema.Attribute.Component<'sponsorship.feature', true> &
+      Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SponsorshipTier extends Struct.ComponentSchema {
+  collectionName: 'components_sponsorship_tiers';
+  info: {
+    displayName: 'Tier';
+  };
+  attributes: {
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    highlights: Schema.Attribute.Component<'sponsorship.highlight', true> &
+      Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    price: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface TeamDepartament extends Struct.ComponentSchema {
   collectionName: 'components_team_departaments';
   info: {
@@ -239,6 +286,10 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'sponsorship.feature': SponsorshipFeature;
+      'sponsorship.highlight': SponsorshipHighlight;
+      'sponsorship.section': SponsorshipSection;
+      'sponsorship.tier': SponsorshipTier;
       'team.departament': TeamDepartament;
       'team.team-member': TeamTeamMember;
     }

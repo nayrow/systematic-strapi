@@ -29,7 +29,7 @@
       "type": "string",
       "required": true
     },
-    "department": {
+    "departments": {
       "displayName": "Departament",
       "type": "component",
       "repeatable": true,

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_sponsorship_highlights",
+  "info": {
+    "displayName": "Highlight"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

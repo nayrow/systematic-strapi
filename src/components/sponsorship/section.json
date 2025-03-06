@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_sponsorship_sections",
+  "info": {
+    "displayName": "Section"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "features": {
+      "displayName": "Feature",
+      "type": "component",
+      "repeatable": true,
+      "component": "sponsorship.feature",
+      "required": true
+    }
+  }
+}

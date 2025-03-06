@@ -686,6 +686,52 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiSponsorhipSponsorhip extends Struct.SingleTypeSchema {
+  collectionName: 'sponsorhips';
+  info: {
+    description: '';
+    displayName: 'Sponsorhip';
+    pluralName: 'sponsorhips';
+    singularName: 'sponsorhip';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sponsorhip.sponsorhip'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.Component<'sponsorship.section', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+          min: 3;
+        },
+        number
+      >;
+    tiers: Schema.Attribute.Component<'sponsorship.tier', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+          min: 3;
+        },
+        number
+      >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTeamTeam extends Struct.SingleTypeSchema {
   collectionName: 'teams';
   info: {
@@ -701,7 +747,7 @@ export interface ApiTeamTeam extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    department: Schema.Attribute.Component<'team.departament', true> &
+    departments: Schema.Attribute.Component<'team.departament', true> &
       Schema.Attribute.Required;
     hero: Schema.Attribute.Component<'shared.page-hero', false> &
       Schema.Attribute.Required;
@@ -1237,6 +1283,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::header.header': ApiHeaderHeader;
       'api::home.home': ApiHomeHome;
+      'api::sponsorhip.sponsorhip': ApiSponsorhipSponsorhip;
       'api::team.team': ApiTeamTeam;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

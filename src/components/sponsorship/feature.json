@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sponsorship_features",
+  "info": {
+    "displayName": "Feature"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "tiers": {
+      "type": "json"
+    }
+  }
+}
