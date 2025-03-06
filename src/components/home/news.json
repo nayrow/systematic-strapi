@@ -6,12 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "NewsPost": {
-      "displayName": "NewsPost",
-      "type": "component",
-      "repeatable": true,
-      "component": "home.news-post"
-    },
     "title": {
       "type": "string",
       "required": true
@@ -19,6 +13,11 @@
     "subtitle": {
       "type": "string",
       "required": true
+    },
+    "news_posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::news-post.news-post"
     }
   }
 }

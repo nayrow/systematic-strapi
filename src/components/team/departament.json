@@ -41,6 +41,11 @@
       "repeatable": true,
       "component": "team.team-member",
       "required": true
+    },
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.page-hero"
     }
   }
 }

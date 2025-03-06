@@ -28,6 +28,13 @@
       "required": true,
       "min": 3,
       "max": 3
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
     }
   }
 }

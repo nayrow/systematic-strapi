@@ -1,7 +1,8 @@
 {
   "collectionName": "components_contact_social_links",
   "info": {
-    "displayName": "Social Link"
+    "displayName": "Social Link",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,7 +14,7 @@
       "type": "string",
       "required": true
     },
-    "iconUrl": {
+    "icon_url": {
       "type": "string",
       "required": true
     }

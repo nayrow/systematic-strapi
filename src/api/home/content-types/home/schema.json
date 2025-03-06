@@ -11,14 +11,14 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "HomeHero": {
+    "hero": {
       "displayName": "HomeHero",
       "type": "component",
       "repeatable": false,
       "component": "home.home-hero",
       "required": true
     },
-    "News": {
+    "news": {
       "type": "component",
       "repeatable": false,
       "component": "home.news"

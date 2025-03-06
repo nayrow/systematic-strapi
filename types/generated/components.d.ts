@@ -3,10 +3,11 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface ContactSocialLink extends Struct.ComponentSchema {
   collectionName: 'components_contact_social_links';
   info: {
+    description: '';
     displayName: 'Social Link';
   };
   attributes: {
-    iconUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    icon_url: Schema.Attribute.String & Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     url: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -15,6 +16,7 @@ export interface ContactSocialLink extends Struct.ComponentSchema {
 export interface ContestsContest extends Struct.ComponentSchema {
   collectionName: 'components_contests_contests';
   info: {
+    description: '';
     displayName: 'contest';
   };
   attributes: {
@@ -23,6 +25,7 @@ export interface ContestsContest extends Struct.ComponentSchema {
     description: Schema.Attribute.String & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -72,18 +75,18 @@ export interface HomeHomeHero extends Struct.ComponentSchema {
     displayName: 'HomeHero';
   };
   attributes: {
-    Description: Schema.Attribute.String & Schema.Attribute.Required;
-    FeaturedArticle: Schema.Attribute.Component<
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    featured_article: Schema.Attribute.Component<
       'home.featured-article',
       false
     > &
       Schema.Attribute.Required;
     logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    primaryButton: Schema.Attribute.Component<'home.button', false> &
+    primary_button: Schema.Attribute.Component<'home.button', false> &
       Schema.Attribute.Required;
-    secondaryButton: Schema.Attribute.Component<'home.button', false> &
+    secondary_button: Schema.Attribute.Component<'home.button', false> &
       Schema.Attribute.Required;
-    Video: Schema.Attribute.Media<'videos'>;
+    video: Schema.Attribute.Media<'videos'>;
   };
 }
 
@@ -94,7 +97,10 @@ export interface HomeNews extends Struct.ComponentSchema {
     displayName: 'News';
   };
   attributes: {
-    NewsPost: Schema.Attribute.Component<'home.news-post', true>;
+    news_posts: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::news-post.news-post'
+    >;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -245,6 +251,7 @@ export interface TeamDepartament extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    hero: Schema.Attribute.Component<'shared.page-hero', false>;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     leader: Schema.Attribute.Component<'team.team-member', false>;
     name: Schema.Attribute.String & Schema.Attribute.Required;

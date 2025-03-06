@@ -6,14 +6,14 @@
   },
   "options": {},
   "attributes": {
-    "FeaturedArticle": {
+    "featured_article": {
       "displayName": "FeaturedArticle",
       "type": "component",
       "repeatable": false,
       "component": "home.featured-article",
       "required": true
     },
-    "Video": {
+    "video": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -29,18 +29,18 @@
         "images"
       ]
     },
-    "Description": {
+    "description": {
       "type": "string",
       "required": true
     },
-    "primaryButton": {
+    "primary_button": {
       "displayName": "Button",
       "type": "component",
       "repeatable": false,
       "component": "home.button",
       "required": true
     },
-    "secondaryButton": {
+    "secondary_button": {
       "type": "component",
       "repeatable": false,
       "component": "home.button",

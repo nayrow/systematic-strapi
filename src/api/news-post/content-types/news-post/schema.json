@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_posts",
+  "info": {
+    "singularName": "news-post",
+    "pluralName": "news-posts",
+    "displayName": "News Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.page-hero",
+      "required": true
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "date": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,7 +1,8 @@
 {
   "collectionName": "components_contests_contests",
   "info": {
-    "displayName": "contest"
+    "displayName": "contest",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,12 +15,12 @@
       "required": true
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "description": {
       "type": "string",
@@ -27,6 +28,10 @@
     },
     "content": {
       "type": "richtext",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
       "required": true
     }
   }
