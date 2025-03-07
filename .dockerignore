@@ -1,0 +1,16 @@
+.git
+.github
+node_modules
+.env
+.env.*
+!.env.example
+.DS_Store
+.vscode
+.idea
+*.log
+license.txt
+exports
+.cache
+build
+.strapi-updater.json
+database/*.db 
